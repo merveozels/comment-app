@@ -1,0 +1,399 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: lightgrey;
+
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+
+/* text area start */
+.text-box-container {
+  background-color: rgb(230, 226, 226);
+  border: 1px solid transparent;
+  border-radius: 15px;
+  margin-top: 15px;
+  padding-block: 15px;
+  height: 150px;
+  padding-inline: 15px;
+  margin-bottom: 35px;
+}
+
+.textarea {
+  border: 1px solid transparent;
+  background-color: rgb(230, 226, 226);
+  width: 100%;
+  font-size: 20px;
+}
+
+textarea.textarea:focus {
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.submitBtn {
+  margin-left: auto;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: center;
+}
+
+.type-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.boldBtns {
+  border-right: 1px solid rgb(202, 194, 194);
+  padding-right: 8px;
+  display: flex;
+  gap: 25px;
+}
+
+
+.boldBtn {
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.italicBtn {
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.underlineBtn {
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+
+}
+
+.emojibtn {
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.submitBtn {
+  border: 1px solid transparent;
+  background-color: #ea4d32;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  line-height: 2px;
+  padding: 8px 18px;
+  text-align: center;
+}
+
+
+/* Emoji Picker */
+.genel {
+  position: relative;
+}
+
+.emoji-picker {
+  position: absolute;
+  top: 10px;
+  left: 190px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+/* Emoji Picker'ın emoji stilizasyonu */
+
+.emoji-picker .emoji {
+  font-size: 25px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.emoji-picker .emoji:hover {
+  transform: scale(1.2);
+}
+
+/*!textarea finish here */
+
+/* comment container start here */
+
+.comment-container {
+  padding-inline: 45px;
+  padding-block: 25px;
+  margin-top: 15px;
+  background-color: white;
+  max-width: 1250px;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+  width: 100%;
+  padding-top: 25px;
+  border-top: 1px solid rgb(128, 128, 128, 0.3);
+}
+
+.totalComment {
+  background-color: #ea4d32;
+  color: white;
+  padding: 3px 25px;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 25px;
+  padding-inline: 21px;
+}
+
+.card-container {
+  margin-top: 25px;
+}
+
+.comment-card {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2px;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  img {
+    border-radius: 1000px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.card-top-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.commentTime {
+  font-size: 15px;
+}
+
+.card-middle{
+  padding-inline: 60px;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-inline: 60px;
+  margin-top: 8px;
+  button{
+    display: flex;
+    align-items: center;
+    gap:3px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  img {
+    width: 15px;
+    height: 12px;
+  }
+
+  h5 {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+  
+  .replyIcon {
+    width: 25px;
+    height: 23px;
+    fill: #ea4d32;
+  }
+}
+
+
+/* reply container start here  */
+
+.replies-section{
+  padding-inline: 60px;
+  margin-top: 30px;
+}
+
+/* dialog start here */
+
+.dialogReply {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color:rgb(230, 226, 226);
+  border: 1px solid transparent;
+  border-radius: 15px;
+  padding-block: 15px;
+  padding-inline: 15px;
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  margin-inline: auto;
+  z-index: 10; 
+  width: 50%;
+}
+
+/* reply emoji  */
+
+.genelReply{
+  position: relative;
+}
+
+.emojiPicker {
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  top: 20px;
+  left: 200px;
+}
+
+
+@media (width < 850px) {
+  .comment-container {
+    padding-inline: 25px;
+    padding-block: 25px;
+    margin-top: 15px;
+    background-color: white;
+    max-width: 600px;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .genel {
+    position: relative;
+  }
+  
+  .emoji-picker {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+  }
+  .replies-section{
+    padding-inline: 30px;
+    margin-top: 30px;
+  }
+
+  .dialogReply {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color:rgb(230, 226, 226);
+    border: 1px solid transparent;
+    border-radius: 15px;
+    padding-block: 15px;
+    padding-inline: 15px;
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    margin-inline: auto;
+    z-index: 10; 
+    width: 100%;
+  }
+
+  .genelReply{
+    position: relative;
+  }
+  
+  .emojiPicker {
+    position: fixed;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    top: 150px;
+    left: 10px;
+  }
+}
