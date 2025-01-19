@@ -77,6 +77,7 @@ h6 {
   background-color: rgb(230, 226, 226);
   width: 100%;
   font-size: 20px;
+  resize: none;
 }
 
 textarea.textarea:focus {
