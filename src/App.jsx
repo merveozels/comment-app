@@ -172,8 +172,11 @@ function Comments({ datas, setData, reaction, setReaction, reactionComment }) {
       alert("You couldn't send empty");
       return;
     }
+
     setData(updatedComments);
+    setText("");
     dialogRef.current[id].close();
+    
   }
 
   function handleEmoji() {
