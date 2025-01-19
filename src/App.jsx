@@ -32,7 +32,7 @@ function Comments({ datas, setData, reaction, setReaction, reactionComment }) {
   const [isItalic, setItalic] = useState(false)
   const [isUnderline, setUnderline] = useState(false)
 
-  const [totalComment, setTotalComment] = useState(6)
+  const [totalComment, setTotalComment] = useState(3)
 
   const [isReplyBold, setReplyBold] = useState(false)
   const [isReplyItalic, setReplyItalic] = useState(false)
@@ -162,7 +162,7 @@ function Comments({ datas, setData, reaction, setReaction, reactionComment }) {
       if (x.id === id) {
         return {
           ...x,
-          replies: [...x.replies, newReply],
+          replies: [ newReply, ...x.replies],
         };
       }
       return x;
@@ -172,7 +172,6 @@ function Comments({ datas, setData, reaction, setReaction, reactionComment }) {
       alert("You couldn't send empty");
       return;
     }
-    setTotalComment(totalComment + 1)
     setData(updatedComments);
     dialogRef.current[id].close();
   }
@@ -255,7 +254,7 @@ function Comments({ datas, setData, reaction, setReaction, reactionComment }) {
                 ></textarea>
                 {isEmoji && (
                   <>
-                    <div className="genelReply">
+                    <div className="genel">
                       <div className="emojiPicker">
                         <EmojiPicker onEmojiClick={handleEmojiClick} />
                       </div>
@@ -335,14 +334,13 @@ function Textbox({ datas, setData, isBold, setBold, isItalic, setItalic, isUnder
   function handleUnderline() {
     setUnderline((prev) => !prev);
   }
-
   function handleComment(e) {
     e.preventDefault();
-
+  
     const formData = new FormData(textInput.current);
     const formObj = Object.fromEntries(formData);
     const styledText = text;
-
+  
     const updatedFormObj = {
       ...formObj,
       comment: styledText,
@@ -357,21 +355,24 @@ function Textbox({ datas, setData, isBold, setBold, isItalic, setItalic, isUnder
       isItalic: isItalic ? isItalic : null,
       isUnderline: isUnderline ? isUnderline : null,
     };
-
+  
     if (!formObj.comment || formObj.comment.trim() === "") {
       alert("You couldn't send empty");
       return;
     }
+  
 
-    setData([...datas, updatedFormObj]);
+    setData([...datas ,updatedFormObj]);
+  
     textInput.current.reset();
     setText("");
     setBold(false);
     setItalic(false);
     setUnderline(false);
-    setEmoji(false)
-    setTotalComment(totalComment + 1)
+    setEmoji(false);
+    setTotalComment(totalComment + 1);
   }
+  
 
   function handleEmoji() {
     setEmoji((prev) => !prev);
