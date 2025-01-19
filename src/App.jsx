@@ -231,12 +231,12 @@ function Comments({ datas, setData, reaction, setReaction, reactionComment }) {
             </div>
             <div className="card-bottom">
               <button onClick={() => handleIncreaseLikes(comment.id)}>
-                <img src="./public/assets/img/like.png" alt="like" /> {comment.likes}
+                <img src="./assets/img/like.png" alt="like" /> {comment.likes}
               </button>
               <button onClick={() => handleDecreaseLikes(comment.id)}>
-                <img src="./public/assets/img/dislike.png" alt="dislike" /> {comment.dislikes}
+                <img src="./assets/img/dislike.png" alt="dislike" /> {comment.dislikes}
               </button>
-              <button onClick={() => handleReply(comment.id)}>   <img className='replyIcon' src="./public/assets/img/reply-icon.svg" alt="" /> Reply </button>
+              <button onClick={() => handleReply(comment.id)}>   <img className='replyIcon' src="./assets/img/reply-icon.svg" alt="" /> Reply </button>
             </div>
             <dialog className='dialogReply' ref={el => (dialogRef.current[comment.id] = el)} style={{ height: isEmoji ? "550px" : "170px" }}>
               <form ref={el => (dialogInputRef.current[comment.id] = el)} onSubmit={e => handleSend(e, comment.id)}>
@@ -287,10 +287,10 @@ function Comments({ datas, setData, reaction, setReaction, reactionComment }) {
                 </div>
                 <div className="card-bottom">
                   <button onClick={() => handleReplyLikes(reply.id)}>
-                    <img src="./public/assets/img/like.png" alt="like" /> {reply.likes}
+                    <img src="./assets/img/like.png" alt="like" /> {reply.likes}
                   </button>
                   <button onClick={() => handleReplyDislikes(reply.id)}>
-                    <img src="./public/assets/img/dislike.png" alt="dislike" /> {reply.dislikes}
+                    <img src="./assets/img/dislike.png" alt="dislike" /> {reply.dislikes}
                   </button>
                 </div>
               </div>
